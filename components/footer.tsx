@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageCircle, Mail, ExternalLink } from "lucide-react";
+import { Mail, ExternalLink } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -32,16 +32,6 @@ export function Footer() {
 
           {/* Right — contact */}
           <div className="flex flex-col gap-4 md:items-end justify-center">
-            <a
-              href="https://wa.me/6596875688"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-5 py-3 rounded-full font-medium transition-all duration-200 cursor-pointer"
-              style={{ backgroundColor: "#25D366", color: "#fff" }}
-            >
-              <MessageCircle size={18} />
-              Chat on WhatsApp
-            </a>
             <a
               href="mailto:viknesh.geevan@gmail.com"
               className="inline-flex items-center gap-2 text-sm transition-colors duration-200"
