@@ -212,11 +212,11 @@ export function WhyHireContent() {
               Chat on WhatsApp
             </a>
             <a
-              href="mailto:hello@vikgeev.com"
+              href="mailto:viknesh.geevan@gmail.com"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold border cursor-pointer"
               style={{ borderColor: "var(--border)", color: "var(--fg)" }}
             >
-              hello@vikgeev.com
+              viknesh.geevan@gmail.com
             </a>
           </div>
         </motion.div>

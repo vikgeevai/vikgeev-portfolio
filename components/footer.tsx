@@ -40,15 +40,15 @@ export function Footer() {
               style={{ backgroundColor: "#25D366", color: "#fff" }}
             >
               <MessageCircle size={18} />
-              +65 9687 5688 on WhatsApp
+              Chat on WhatsApp
             </a>
             <a
-              href="mailto:hello@vikgeev.com"
+              href="mailto:viknesh.geevan@gmail.com"
               className="inline-flex items-center gap-2 text-sm transition-colors duration-200"
               style={{ color: "var(--muted)" }}
             >
               <Mail size={15} />
-              hello@vikgeev.com
+              viknesh.geevan@gmail.com
             </a>
           </div>
         </div>
