@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Menu, X, Moon, Sun, MessageCircle } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
@@ -18,12 +17,6 @@ export function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { resolvedTheme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -77,18 +70,6 @@ export function Navbar() {
 
           {/* Desktop actions */}
           <div className="hidden md:flex items-center gap-3">
-            {/* Theme toggle */}
-            {mounted && (
-              <button
-                aria-label="Toggle theme"
-                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className="w-9 h-9 flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer"
-                style={{ color: "var(--muted)" }}
-              >
-                {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
-            )}
-
             {/* WhatsApp CTA */}
             <a
               href="https://wa.me/6596875688"
@@ -104,16 +85,6 @@ export function Navbar() {
 
           {/* Mobile menu toggle */}
           <div className="md:hidden flex items-center gap-2">
-            {mounted && (
-              <button
-                aria-label="Toggle theme"
-                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-                className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer"
-                style={{ color: "var(--muted)" }}
-              >
-                {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-              </button>
-            )}
             <button
               aria-label="Toggle menu"
               onClick={() => setMobileOpen((v) => !v)}
