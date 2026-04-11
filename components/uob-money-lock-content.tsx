@@ -452,77 +452,85 @@ export function UOBMoneyLockContent() {
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-5 mb-8">
+          {/* 4-column horizontal layout — matches original */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
             {usabilityIssues.map((issue, i) => (
               <motion.div
                 key={issue.title}
                 {...animate(0.07 * i)}
-                className="rounded-2xl overflow-hidden flex flex-col"
-                style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}
+                className="flex flex-col gap-4"
               >
-                {/* Screen image */}
-                {issue.image ? (
-                  <div className="overflow-hidden" style={{ backgroundColor: "#E5E7EB", maxHeight: "220px" }}>
+                {/* Screen image in grey rounded container */}
+                <div
+                  className="w-full rounded-2xl overflow-hidden flex items-center justify-center"
+                  style={{
+                    backgroundColor: "rgba(156,163,175,0.15)",
+                    border: "1px solid var(--card-border)",
+                    minHeight: "200px",
+                  }}
+                >
+                  {issue.image ? (
                     <Image
                       src={issue.image}
                       alt={issue.title}
                       width={issue.w}
                       height={issue.h}
-                      className="w-full object-cover object-top"
-                      style={{ display: "block", maxHeight: "220px" }}
+                      className="w-full object-cover object-top rounded-2xl"
+                      style={{ display: "block", maxHeight: "200px" }}
                     />
-                  </div>
-                ) : (
-                  <div
-                    className="flex items-center justify-center"
-                    style={{ backgroundColor: "#E5E7EB", height: "220px" }}
-                  >
-                    <div className="text-center px-6">
-                      <div className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center"
-                        style={{ backgroundColor: "rgba(0,0,0,0.08)" }}>
-                        <span style={{ color: "rgba(0,0,0,0.3)", fontSize: "18px" }}>📱</span>
+                  ) : (
+                    <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center mb-2"
+                        style={{ backgroundColor: "rgba(0,0,0,0.08)" }}
+                      >
+                        <span style={{ fontSize: "16px" }}>📱</span>
                       </div>
-                      <p className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.35)" }}>Prototype screen</p>
+                      <p className="text-xs" style={{ color: "var(--muted)" }}>Prototype screen</p>
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
-                {/* Card body */}
-                <div className="p-6 flex flex-col gap-3 flex-1">
-                  {/* Severity badge */}
+                {/* Severity badge */}
+                <div className="flex justify-center">
                   <span
-                    className="inline-flex self-start items-center px-3 py-1 rounded-full text-xs font-bold"
+                    className="inline-flex items-center justify-center px-5 py-1.5 rounded-full text-sm font-bold text-white"
                     style={
                       issue.severity === "Major"
-                        ? { backgroundColor: "#FEE2E2", color: "#DC2626" }
-                        : { backgroundColor: "#FEF3C7", color: "#B45309" }
+                        ? { background: "linear-gradient(135deg, #EF4444 0%, #F97316 100%)" }
+                        : { background: "linear-gradient(135deg, #F59E0B 0%, #EAB308 100%)" }
                     }
                   >
                     {issue.severity}
                   </span>
-
-                  <h3
-                    className="font-heading font-semibold"
-                    style={{
-                      fontFamily: "var(--font-heading, sans-serif)",
-                      fontSize: "1rem",
-                      color: "var(--fg)",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {issue.title}
-                  </h3>
-
-                  <ul className="space-y-2 flex-1">
-                    {issue.points.map((pt, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <span className="flex-shrink-0 w-1 h-1 rounded-full mt-2"
-                          style={{ backgroundColor: "var(--muted)" }} />
-                        <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{pt}</p>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
+
+                {/* Title */}
+                <h3
+                  className="font-heading font-semibold text-center"
+                  style={{
+                    fontFamily: "var(--font-heading, sans-serif)",
+                    fontSize: "0.95rem",
+                    color: "var(--fg)",
+                    letterSpacing: "-0.01em",
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {issue.title}
+                </h3>
+
+                {/* Bullets */}
+                <ul className="space-y-2">
+                  {issue.points.map((pt, j) => (
+                    <li key={j} className="flex items-start gap-2">
+                      <span
+                        className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: "var(--muted)" }}
+                      />
+                      <p className="text-xs leading-snug" style={{ color: "var(--muted)" }}>{pt}</p>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
