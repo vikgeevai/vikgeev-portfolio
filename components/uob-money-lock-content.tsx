@@ -72,7 +72,7 @@ const usabilityIssues = [
     severity: "Major",
     title: "Money lock limit",
     image: "/case-studies/uob-money-lock/usability-screen-1.png",
-    w: 376, h: 288,
+    w: 166, h: 213,
     points: [
       "Assumed they were setting aside money instead of a limit",
       "Felt the term is very technical, did not understand why it was called a limit",
@@ -82,7 +82,7 @@ const usabilityIssues = [
     severity: "Major",
     title: "Money lock CVP",
     image: "/case-studies/uob-money-lock/usability-screen-2.png",
-    w: 376, h: 288,
+    w: 166, h: 213,
     points: [
       "Concerned about restrictions and T&Cs",
       "Did not know that they could only lower the limit and access locked amount through ATM",
@@ -92,7 +92,7 @@ const usabilityIssues = [
     severity: "Moderate",
     title: "Accessible / available balance",
     image: "/case-studies/uob-money-lock/usability-screen-3.png",
-    w: 376, h: 288,
+    w: 166, h: 213,
     points: [
       "Confusion between accessible and available balance",
       "Observed participants using the terms interchangeably or wrongly",
@@ -102,7 +102,7 @@ const usabilityIssues = [
     severity: "Moderate",
     title: "Account details",
     image: "/case-studies/uob-money-lock/usability-screen-4.png",
-    w: 376, h: 288,
+    w: 166, h: 213,
     points: [
       "Thought 'Money lock on' meant they could no longer access the amount when making a transfer",
       "Preference for version with all three amounts displayed",
