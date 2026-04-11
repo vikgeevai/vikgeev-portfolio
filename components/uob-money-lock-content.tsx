@@ -71,8 +71,8 @@ const usabilityIssues = [
   {
     severity: "Major",
     title: "Money lock limit",
-    image: "/case-studies/uob-money-lock/user-testing-1.png",
-    w: 375, h: 1669,
+    image: "/case-studies/uob-money-lock/usability-screen-1.png",
+    w: 376, h: 288,
     points: [
       "Assumed they were setting aside money instead of a limit",
       "Felt the term is very technical, did not understand why it was called a limit",
@@ -81,8 +81,8 @@ const usabilityIssues = [
   {
     severity: "Major",
     title: "Money lock CVP",
-    image: "/case-studies/uob-money-lock/user-testing-2.png",
-    w: 375, h: 1560,
+    image: "/case-studies/uob-money-lock/usability-screen-2.png",
+    w: 376, h: 288,
     points: [
       "Concerned about restrictions and T&Cs",
       "Did not know that they could only lower the limit and access locked amount through ATM",
@@ -91,8 +91,8 @@ const usabilityIssues = [
   {
     severity: "Moderate",
     title: "Accessible / available balance",
-    image: "/case-studies/uob-money-lock/user-testing-3.png",
-    w: 375, h: 811,
+    image: "/case-studies/uob-money-lock/usability-screen-3.png",
+    w: 376, h: 288,
     points: [
       "Confusion between accessible and available balance",
       "Observed participants using the terms interchangeably or wrongly",
@@ -101,7 +101,8 @@ const usabilityIssues = [
   {
     severity: "Moderate",
     title: "Account details",
-    image: null,
+    image: "/case-studies/uob-money-lock/usability-screen-4.png",
+    w: 376, h: 288,
     points: [
       "Thought 'Money lock on' meant they could no longer access the amount when making a transfer",
       "Preference for version with all three amounts displayed",
@@ -462,11 +463,10 @@ export function UOBMoneyLockContent() {
               >
                 {/* Screen image in grey rounded container */}
                 <div
-                  className="w-full rounded-2xl overflow-hidden flex items-center justify-center"
+                  className="w-full rounded-2xl overflow-hidden"
                   style={{
                     backgroundColor: "rgba(156,163,175,0.15)",
                     border: "1px solid var(--card-border)",
-                    minHeight: "200px",
                   }}
                 >
                   {issue.image ? (
@@ -475,8 +475,8 @@ export function UOBMoneyLockContent() {
                       alt={issue.title}
                       width={issue.w}
                       height={issue.h}
-                      className="w-full object-cover object-top rounded-2xl"
-                      style={{ display: "block", maxHeight: "200px" }}
+                      className="w-full h-auto rounded-2xl"
+                      style={{ display: "block" }}
                     />
                   ) : (
                     <div className="flex flex-col items-center justify-center py-10 px-4 text-center">
