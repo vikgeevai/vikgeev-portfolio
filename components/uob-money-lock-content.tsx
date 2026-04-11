@@ -539,7 +539,7 @@ export function UOBMoneyLockContent() {
           <motion.div {...animate(0.3)}>
             <p
               className="text-sm leading-relaxed text-center py-4"
-              style={{ color: "#D97706", borderTop: "1px solid var(--border)" }}
+              style={{ color: "#D97706" }}
             >
               Opportunity to increase clarity of product construct through explanation of benefits and clearer labels
             </p>
