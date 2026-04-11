@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowLeft, ArrowRight, CheckCircle2, AlertCircle, Users, Clock, Wrench, Target } from "lucide-react";
+import { ArrowLeft, ArrowRight, Users, Clock, Wrench, Target } from "lucide-react";
 import { easeOutExpo, makeFadeUp } from "@/lib/motion";
 
 /* ─── Journey steps ───────────────────────────────────────────────────────── */
@@ -52,23 +52,61 @@ const journeySteps = [
 ];
 
 /* ─── Insights ────────────────────────────────────────────────────────────── */
-const strengths = [
-  "Participants are concerned about scams and appreciate products which alleviate anxiety by increasing security.",
-  "Want to ensure emergency funds and savings are secured.",
-];
-
-const areasToImprove = [
-  "Cannot see the value of setting a limit higher than balance (even after explaining), which risks weakening the construct's security benefit.",
-  "Being able to deduct funds from locked account weakens the 'lock' proposition.",
-  "Users would not want to lock funds used for transactions, limiting relevance of continued scheduled deductions.",
-  "Usability issues identified — opportunity to increase clarity through better explanation and clearer labels.",
-];
-
 const testingObjectives = [
-  "Explore preconceived expectations about 'money lock' products",
-  "Assess relevance of Money Lock 2.0 against competition and identifying improvement areas",
-  "Deep-dive on perceptions towards new features (i.e. limit vs. locked away amount)",
-  "Test usability and understanding of new journeys",
+  { bold: "Explore preconceived expectations", rest: " about 'money lock' products" },
+  { bold: "Assess relevance of Money Lock 2.0", rest: " against competition and identifying improvement areas" },
+  { bold: "Deep-dive on perceptions towards new features", rest: " (i.e., limit vs locked away amount)" },
+  { bold: "Test usability and understanding", rest: " of new journeys" },
+];
+
+const customerQuotes = [
+  "I don't like the idea of money being taken away from the account. It feels more encrypted and protected when there is completely no access to it",
+  "It's ridiculous to set above the available balance! What for?! There is no point to that",
+  "I didn't think of a situation where someone would set above balance. It's scary that you might not have any available cash",
+  "I think it's useful, but I wouldn't lock accounts that I use day-to-day; will lock away emergency funds, accounts that I can leave aside",
+];
+
+/* ─── Usability Issues ────────────────────────────────────────────────────── */
+const usabilityIssues = [
+  {
+    severity: "Major",
+    title: "Money lock limit",
+    image: "/case-studies/uob-money-lock/user-testing-1.png",
+    w: 375, h: 1669,
+    points: [
+      "Assumed they were setting aside money instead of a limit",
+      "Felt the term is very technical, did not understand why it was called a limit",
+    ],
+  },
+  {
+    severity: "Major",
+    title: "Money lock CVP",
+    image: "/case-studies/uob-money-lock/user-testing-2.png",
+    w: 375, h: 1560,
+    points: [
+      "Concerned about restrictions and T&Cs",
+      "Did not know that they could only lower the limit and access locked amount through ATM",
+    ],
+  },
+  {
+    severity: "Moderate",
+    title: "Accessible / available balance",
+    image: "/case-studies/uob-money-lock/user-testing-3.png",
+    w: 375, h: 811,
+    points: [
+      "Confusion between accessible and available balance",
+      "Observed participants using the terms interchangeably or wrongly",
+    ],
+  },
+  {
+    severity: "Moderate",
+    title: "Account details",
+    image: null,
+    points: [
+      "Thought 'Money lock on' meant they could no longer access the amount when making a transfer",
+      "Preference for version with all three amounts displayed",
+    ],
+  },
 ];
 
 /* ─── Terminology ─────────────────────────────────────────────────────────── */
@@ -324,7 +362,7 @@ export function UOBMoneyLockContent() {
         <section className="py-16">
           <motion.div {...animate()} className="mb-10">
             <SectionLabel>Research & Insights</SectionLabel>
-            <h2 className="font-heading font-bold mb-3"
+            <h2 className="font-heading font-bold"
               style={{
                 fontFamily: "var(--font-heading, sans-serif)",
                 fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
@@ -335,92 +373,168 @@ export function UOBMoneyLockContent() {
             </h2>
           </motion.div>
 
-          {/* Testing objectives */}
-          <motion.div {...animate(0.05)} className="mb-10 p-8 rounded-2xl"
-            style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
-            <p className="text-sm font-semibold mb-5" style={{ color: "var(--fg)" }}>
+          {/* Testing objectives — bold key phrase + regular rest */}
+          <motion.div {...animate(0.05)} className="mb-12">
+            <p className="text-base font-semibold mb-5" style={{ color: "var(--fg)" }}>
               User Testing Objectives
             </p>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 gap-y-3 gap-x-8">
               {testingObjectives.map((obj, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                    style={{ backgroundColor: "rgba(37,99,235,0.12)", color: "#2563EB" }}>
-                    {i + 1}
-                  </span>
-                  <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{obj}</p>
-                </div>
+                <p key={i} className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>
+                  <span className="font-semibold" style={{ color: "#D97706" }}>{obj.bold}</span>
+                  {obj.rest}
+                </p>
               ))}
             </div>
           </motion.div>
 
-          {/* Key insight callout */}
-          <motion.div {...animate(0.1)} className="mb-10 p-8 rounded-2xl relative overflow-hidden"
-            style={{
-              background: "linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(37,99,235,0.06) 100%)",
-              border: "1px solid rgba(124,58,237,0.2)",
-            }}>
-            <div className="text-5xl leading-none mb-3" style={{ color: "rgba(124,58,237,0.25)", fontFamily: "Georgia, serif" }}>&ldquo;</div>
-            <p className="text-lg leading-relaxed font-medium italic mb-2" style={{ color: "var(--fg)" }}>
+          {/* Customer quote bubbles — 2×2 */}
+          <motion.div {...animate(0.1)} className="grid sm:grid-cols-2 gap-5 mb-10">
+            {customerQuotes.map((quote, i) => (
+              <div key={i} className="relative pb-3">
+                <div
+                  className="rounded-2xl rounded-bl-sm p-5"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    border: "1.5px solid rgba(37,99,235,0.35)",
+                  }}
+                >
+                  <p className="text-sm leading-relaxed italic" style={{ color: "#2563EB" }}>
+                    &ldquo;{quote}&rdquo;
+                  </p>
+                </div>
+                {/* Bubble tail */}
+                <div
+                  className="absolute bottom-0 left-5 w-4 h-4"
+                  style={{
+                    backgroundColor: "var(--card)",
+                    borderRight: "1.5px solid rgba(37,99,235,0.35)",
+                    borderBottom: "1.5px solid rgba(37,99,235,0.35)",
+                    transform: "rotate(45deg)",
+                    transformOrigin: "center",
+                  }}
+                />
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Key insight summary */}
+          <motion.div {...animate(0.15)}>
+            <p
+              className="text-base leading-relaxed text-center py-5"
+              style={{
+                color: "#D97706",
+                borderTop: "1px solid var(--border)",
+                borderBottom: "1px solid var(--border)",
+              }}
+            >
               Customers anticipate putting money aside cannot be touched, following OCBC and government
               constructs. Thus, allowing deductions and setting a limit above the available balance requires
               customer learning.
             </p>
-            <p className="text-xs font-medium uppercase tracking-wider mt-4" style={{ color: "var(--muted)" }}>
-              Key Insight — User Testing
-            </p>
+          </motion.div>
+        </section>
+
+        <Divider />
+
+        {/* Usability Issues ─────────────────────────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-10">
+            <SectionLabel>Usability Testing</SectionLabel>
+            <h2 className="font-heading font-bold"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              Usability issues identified during testing
+            </h2>
           </motion.div>
 
-          {/* Strengths vs Areas */}
-          <motion.div {...animate(0.15)} className="grid md:grid-cols-2 gap-4 mb-12">
-            {/* Strengths */}
-            <div className="p-7 rounded-2xl"
-              style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
-              <div className="flex items-center gap-2 mb-5">
-                <CheckCircle2 size={16} style={{ color: "#16A34A" }} />
-                <p className="text-sm font-semibold" style={{ color: "#16A34A" }}>Strengths</p>
-              </div>
-              <ul className="space-y-3">
-                {strengths.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2" style={{ backgroundColor: "#16A34A" }} />
-                    <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{s}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid sm:grid-cols-2 gap-5 mb-8">
+            {usabilityIssues.map((issue, i) => (
+              <motion.div
+                key={issue.title}
+                {...animate(0.07 * i)}
+                className="rounded-2xl overflow-hidden flex flex-col"
+                style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}
+              >
+                {/* Screen image */}
+                {issue.image ? (
+                  <div className="overflow-hidden" style={{ backgroundColor: "#E5E7EB", maxHeight: "220px" }}>
+                    <Image
+                      src={issue.image}
+                      alt={issue.title}
+                      width={issue.w}
+                      height={issue.h}
+                      className="w-full object-cover object-top"
+                      style={{ display: "block", maxHeight: "220px" }}
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="flex items-center justify-center"
+                    style={{ backgroundColor: "#E5E7EB", height: "220px" }}
+                  >
+                    <div className="text-center px-6">
+                      <div className="w-10 h-10 rounded-full mx-auto mb-2 flex items-center justify-center"
+                        style={{ backgroundColor: "rgba(0,0,0,0.08)" }}>
+                        <span style={{ color: "rgba(0,0,0,0.3)", fontSize: "18px" }}>📱</span>
+                      </div>
+                      <p className="text-xs font-medium" style={{ color: "rgba(0,0,0,0.35)" }}>Prototype screen</p>
+                    </div>
+                  </div>
+                )}
 
-            {/* Areas to improve */}
-            <div className="p-7 rounded-2xl"
-              style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
-              <div className="flex items-center gap-2 mb-5">
-                <AlertCircle size={16} style={{ color: "#EA580C" }} />
-                <p className="text-sm font-semibold" style={{ color: "#EA580C" }}>Areas to Improve</p>
-              </div>
-              <ul className="space-y-3">
-                {areasToImprove.map((a, i) => (
-                  <li key={i} className="flex items-start gap-2.5">
-                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2" style={{ backgroundColor: "#EA580C" }} />
-                    <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{a}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+                {/* Card body */}
+                <div className="p-6 flex flex-col gap-3 flex-1">
+                  {/* Severity badge */}
+                  <span
+                    className="inline-flex self-start items-center px-3 py-1 rounded-full text-xs font-bold"
+                    style={
+                      issue.severity === "Major"
+                        ? { backgroundColor: "#FEE2E2", color: "#DC2626" }
+                        : { backgroundColor: "#FEF3C7", color: "#B45309" }
+                    }
+                  >
+                    {issue.severity}
+                  </span>
 
-          {/* Testing screenshots */}
-          <motion.div {...animate(0.2)} className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { src: "/case-studies/uob-money-lock/user-testing-1.png", alt: "User testing — navigation with Money Lock entry point", w: 375, h: 1669 },
-              { src: "/case-studies/uob-money-lock/user-testing-2.png", alt: "User testing — account view showing locked/withdrawable amounts", w: 375, h: 1560 },
-              { src: "/case-studies/uob-money-lock/user-testing-3.png", alt: "User testing — terminology tooltip: Withdrawable Amount explanation", w: 375, h: 811 },
-            ].map((img) => (
-              <div key={img.src} className="rounded-xl overflow-hidden"
-                style={{ border: "1px solid var(--card-border)", boxShadow: "0 4px 16px rgba(0,0,0,0.08)" }}>
-                <Image src={img.src} alt={img.alt} width={img.w} height={img.h}
-                  className="w-full h-auto" style={{ display: "block" }} />
-              </div>
+                  <h3
+                    className="font-heading font-semibold"
+                    style={{
+                      fontFamily: "var(--font-heading, sans-serif)",
+                      fontSize: "1rem",
+                      color: "var(--fg)",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {issue.title}
+                  </h3>
+
+                  <ul className="space-y-2 flex-1">
+                    {issue.points.map((pt, j) => (
+                      <li key={j} className="flex items-start gap-2">
+                        <span className="flex-shrink-0 w-1 h-1 rounded-full mt-2"
+                          style={{ backgroundColor: "var(--muted)" }} />
+                        <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{pt}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
             ))}
+          </div>
+
+          {/* Opportunity summary */}
+          <motion.div {...animate(0.3)}>
+            <p
+              className="text-sm leading-relaxed text-center py-4"
+              style={{ color: "#D97706", borderTop: "1px solid var(--border)" }}
+            >
+              Opportunity to increase clarity of product construct through explanation of benefits and clearer labels
+            </p>
           </motion.div>
         </section>
 
