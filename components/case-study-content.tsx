@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { CaseStudy } from "@/lib/case-studies";
@@ -215,19 +216,32 @@ export function CaseStudyContent({ study, next }: Props) {
                   <p className="text-base leading-relaxed mb-6" style={{ color: "var(--muted)" }}>
                     {section.body}
                   </p>
-                  {/* Image placeholder */}
-                  <div
-                    className="w-full rounded-xl flex items-center justify-center"
-                    style={{
-                      backgroundColor: "var(--card)",
-                      border: "1px solid var(--card-border)",
-                      height: "200px",
-                    }}
-                  >
-                    <p className="text-sm" style={{ color: "var(--muted)" }}>
-                      {section.imageAlt}
-                    </p>
-                  </div>
+                  {section.images && section.images.length > 0 && (
+                    <div className={
+                      section.images.length === 1
+                        ? "w-full"
+                        : section.images.length === 2
+                        ? "grid grid-cols-2 gap-3"
+                        : "grid grid-cols-2 sm:grid-cols-3 gap-3"
+                    }>
+                      {section.images.map((src, idx) => (
+                        <div
+                          key={idx}
+                          className="relative w-full overflow-hidden rounded-xl"
+                          style={{ border: "1px solid var(--card-border)" }}
+                        >
+                          <Image
+                            src={src}
+                            alt={section.imageAlt ? `${section.imageAlt} ${idx + 1}` : `Image ${idx + 1}`}
+                            width={800}
+                            height={600}
+                            className="w-full h-auto object-contain"
+                            style={{ display: "block" }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             ))}

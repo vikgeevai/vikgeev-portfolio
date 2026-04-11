@@ -20,6 +20,7 @@ export interface CaseStudy {
 export interface ProcessSection {
   heading: string;
   body: string;
+  images?: string[];   // paths relative to /public, e.g. "/case-studies/uob-money-lock/flow-overview.png"
   imageAlt?: string;
 }
 
@@ -54,6 +55,11 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "User Testing & Insights",
         body: "Conducted 8+ user testing sessions across diverse customer segments — from digitally-savvy millennials to older TMRW users. Key insight: users were confused when asked to set a lock amount higher than their current balance. Iterated on framing, microcopy, and interaction patterns to reframe the limit as a \"ceiling for protection\" rather than a withdrawal cap.",
+        images: [
+          "/case-studies/uob-money-lock/user-testing-1.png",
+          "/case-studies/uob-money-lock/user-testing-2.png",
+          "/case-studies/uob-money-lock/user-testing-3.png",
+        ],
         imageAlt: "User testing sessions and insight synthesis",
       },
       {
@@ -64,6 +70,14 @@ export const caseStudies: CaseStudy[] = [
       {
         heading: "Flow Design & Delivery",
         body: "Designed a 6-step onboarding flow: (1) CVP Screen explaining the benefit, (2) Select Account, (3) Set Lock Amount with real-time balance display, (4) Cognitive Break screen reinforcing what locking means, (5) Confirmation, (6) Success state with locked amount visible. Delivered full Figma specs to the team of 10 engineers with edge cases, error states, and accessibility annotations.",
+        images: [
+          "/case-studies/uob-money-lock/flow-overview.png",
+          "/case-studies/uob-money-lock/flow-step-1.png",
+          "/case-studies/uob-money-lock/flow-steps-2-3.png",
+          "/case-studies/uob-money-lock/flow-step-4.png",
+          "/case-studies/uob-money-lock/flow-step-5.png",
+          "/case-studies/uob-money-lock/flow-step-6.png",
+        ],
         imageAlt: "6-step Money Lock flow — Figma screens",
       },
     ],
