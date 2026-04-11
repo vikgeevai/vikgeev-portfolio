@@ -432,8 +432,6 @@ export function UOBMoneyLockContent() {
               className="text-base leading-relaxed text-center py-5"
               style={{
                 color: "#D97706",
-                borderTop: "1px solid var(--border)",
-                borderBottom: "1px solid var(--border)",
               }}
             >
               Customers anticipate putting money aside cannot be touched, following OCBC and government
