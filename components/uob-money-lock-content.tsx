@@ -439,6 +439,25 @@ export function UOBMoneyLockContent() {
               customer learning.
             </p>
           </motion.div>
+
+          {/* Supporting screens — 3-column grid */}
+          <motion.div {...animate(0.2)} className="grid grid-cols-3 gap-4 mt-6">
+            {[
+              { src: "/case-studies/uob-money-lock/user-testing-1.png", w: 375, h: 1669, alt: "Services screen showing Money Lock entry point" },
+              { src: "/case-studies/uob-money-lock/user-testing-2.png", w: 375, h: 1560, alt: "One Account details with locked amount" },
+              { src: "/case-studies/uob-money-lock/user-testing-3.png", w: 375, h: 811,  alt: "What do these mean — terminology help screen" },
+            ].map((img) => (
+              <div key={img.src} className="w-full rounded-2xl overflow-hidden" style={{ border: "1px solid var(--card-border)" }}>
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  width={img.w}
+                  height={img.h}
+                  className="w-full h-auto"
+                />
+              </div>
+            ))}
+          </motion.div>
         </section>
 
         <Divider />
