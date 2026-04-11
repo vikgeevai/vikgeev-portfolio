@@ -7,6 +7,7 @@ export interface CaseStudy {
   timeline: string;
   platform: string;
   outcome: string;
+  coverImage?: string; // path to cover/thumbnail image, e.g. "/case-studies/uob-money-lock/cover-icon.png"
   heroColor: string; // gradient stop hex
   heroColorEnd: string;
   tags: string[];
@@ -39,6 +40,7 @@ export const caseStudies: CaseStudy[] = [
     timeline: "Jan – June 2024",
     platform: "Mobile iOS & Android (UOB TMRW)",
     outcome: "$3.9B CASA locked in 3 weeks · 50K+ customers · MAS anti-scam mandate",
+    coverImage: "/case-studies/uob-money-lock/cover-icon.png",
     heroColor: "#1E3A8A",
     heroColorEnd: "#2563EB",
     tags: ["Fintech", "Banking", "Mobile", "MAS Regulation", "Security UX"],

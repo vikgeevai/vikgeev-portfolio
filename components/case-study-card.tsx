@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import type { CaseStudy } from "@/lib/case-studies";
@@ -42,42 +43,53 @@ export function CaseStudyCard({ study, index }: Props) {
               background: `linear-gradient(135deg, ${study.heroColor} 0%, ${study.heroColorEnd} 100%)`,
             }}
           >
-            {/* Mock screen placeholder */}
+            {/* Cover image or placeholder */}
             <motion.div
               className="absolute inset-0 flex items-center justify-center"
               whileHover={shouldReduce ? {} : { scale: 1.04 }}
               transition={{ duration: 0.4, ease: easeOutExpo }}
             >
-              <div
-                className="w-3/4 max-w-xs rounded-xl overflow-hidden shadow-2xl"
-                style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }}
-              >
+              {study.coverImage ? (
+                <Image
+                  src={study.coverImage}
+                  alt={`${study.title} cover`}
+                  width={280}
+                  height={280}
+                  className="object-contain drop-shadow-2xl"
+                  style={{ maxHeight: "260px" }}
+                />
+              ) : (
                 <div
-                  className="h-6 flex items-center gap-1.5 px-3"
-                  style={{ background: "rgba(0,0,0,0.2)" }}
+                  className="w-3/4 max-w-xs rounded-xl overflow-hidden shadow-2xl"
+                  style={{ background: "rgba(255,255,255,0.1)", backdropFilter: "blur(8px)" }}
                 >
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      className="w-2.5 h-2.5 rounded-full"
-                      style={{ background: "rgba(255,255,255,0.35)" }}
-                    />
-                  ))}
+                  <div
+                    className="h-6 flex items-center gap-1.5 px-3"
+                    style={{ background: "rgba(0,0,0,0.2)" }}
+                  >
+                    {[0, 1, 2].map((i) => (
+                      <span
+                        key={i}
+                        className="w-2.5 h-2.5 rounded-full"
+                        style={{ background: "rgba(255,255,255,0.35)" }}
+                      />
+                    ))}
+                  </div>
+                  <div className="p-4 space-y-2">
+                    {[0, 1, 2, 3].map((i) => (
+                      <div
+                        key={i}
+                        className="h-2.5 rounded"
+                        style={{
+                          background: "rgba(255,255,255,0.2)",
+                          width: i === 0 ? "80%" : i === 1 ? "65%" : i === 2 ? "90%" : "50%",
+                        }}
+                      />
+                    ))}
+                    <div className="mt-4 h-16 rounded-lg" style={{ background: "rgba(255,255,255,0.12)" }} />
+                  </div>
                 </div>
-                <div className="p-4 space-y-2">
-                  {[0, 1, 2, 3].map((i) => (
-                    <div
-                      key={i}
-                      className="h-2.5 rounded"
-                      style={{
-                        background: "rgba(255,255,255,0.2)",
-                        width: i === 0 ? "80%" : i === 1 ? "65%" : i === 2 ? "90%" : "50%",
-                      }}
-                    />
-                  ))}
-                  <div className="mt-4 h-16 rounded-lg" style={{ background: "rgba(255,255,255,0.12)" }} />
-                </div>
-              </div>
+              )}
             </motion.div>
 
             {/* Industry tag */}

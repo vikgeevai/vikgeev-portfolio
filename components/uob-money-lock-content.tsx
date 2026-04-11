@@ -181,6 +181,18 @@ export function UOBMoneyLockContent() {
           <rect width="100%" height="100%" filter="url(#g2)" />
         </svg>
 
+        {/* Vault icon — decorative right-side element */}
+        <div className="absolute right-0 bottom-0 top-0 pointer-events-none hidden md:flex items-end justify-end pr-12 pb-8 opacity-90">
+          <Image
+            src="/case-studies/uob-money-lock/cover-icon.png"
+            alt="Money Lock vault"
+            width={260}
+            height={260}
+            className="object-contain drop-shadow-2xl"
+            style={{ filter: "drop-shadow(0 24px 48px rgba(0,0,0,0.35))" }}
+          />
+        </div>
+
         <div className="mx-auto max-w-6xl px-6 w-full relative z-10">
           <motion.div variants={fadeUp} initial="hidden" animate="visible" className="mb-6">
             <Link
