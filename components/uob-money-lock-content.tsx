@@ -290,11 +290,12 @@ export function UOBMoneyLockContent() {
             ))}
           </motion.div>
 
-          {/* 3-per-row phone mockup grid */}
+          {/* 3-per-row screen grid */}
           <motion.div {...animate(0.15)} className="grid grid-cols-3 gap-6">
             {journeySteps.map((step, i) => (
-              <motion.div key={step.num} {...animate(0.06 * i)} className="flex flex-col items-center gap-4">
-                <PhoneMockup>
+              <motion.div key={step.num} {...animate(0.06 * i)} className="flex flex-col items-center gap-3">
+                <div className="w-full rounded-2xl overflow-hidden"
+                  style={{ border: "1px solid var(--card-border)", boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}>
                   <Image
                     src={step.image}
                     alt={`Step ${step.num}: ${step.title}`}
@@ -303,7 +304,7 @@ export function UOBMoneyLockContent() {
                     className="w-full h-auto"
                     style={{ display: "block" }}
                   />
-                </PhoneMockup>
+                </div>
                 <div className="text-center">
                   <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "#2563EB" }}>
                     Step {i + 1}
@@ -592,55 +593,4 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Divider() {
   return <div className="h-px w-full" style={{ backgroundColor: "var(--border)" }} />;
-}
-
-function PhoneMockup({ children }: { children: React.ReactNode }) {
-  return (
-    <div
-      className="relative w-full rounded-[2rem] overflow-hidden"
-      style={{
-        background: "#111",
-        padding: "10px 8px 14px",
-        boxShadow:
-          "0 0 0 1px rgba(255,255,255,0.08), 0 20px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.06)",
-      }}
-    >
-      {/* Status bar */}
-      <div
-        className="flex items-center justify-between px-3 mb-1.5"
-        style={{ height: "20px" }}
-      >
-        <span className="text-white font-semibold" style={{ fontSize: "9px" }}>9:41</span>
-        <div className="flex items-center gap-1">
-          {/* Signal bars */}
-          <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-            <rect x="0" y="6" width="2.5" height="4" rx="0.5" fill="white" opacity="0.9"/>
-            <rect x="3.5" y="4" width="2.5" height="6" rx="0.5" fill="white" opacity="0.9"/>
-            <rect x="7" y="2" width="2.5" height="8" rx="0.5" fill="white" opacity="0.9"/>
-            <rect x="10.5" y="0" width="2.5" height="10" rx="0.5" fill="white" opacity="0.9"/>
-          </svg>
-          {/* WiFi */}
-          <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
-            <path d="M6.5 7.5L8 9.5H5L6.5 7.5Z" fill="white" opacity="0.9"/>
-            <path d="M3.5 5.5C4.3 4.6 5.3 4 6.5 4C7.7 4 8.7 4.6 9.5 5.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.9"/>
-            <path d="M1.5 3C3 1.6 4.7 1 6.5 1C8.3 1 10 1.6 11.5 3" stroke="white" strokeWidth="1.2" strokeLinecap="round" opacity="0.6"/>
-          </svg>
-          {/* Battery */}
-          <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
-            <rect x="0.5" y="1" width="16" height="8" rx="2" stroke="white" strokeOpacity="0.6" strokeWidth="1"/>
-            <rect x="2" y="2.5" width="12" height="5" rx="1" fill="white" opacity="0.9"/>
-            <path d="M17.5 3.5V6.5C18.3 6.2 18.3 3.8 17.5 3.5Z" fill="white" opacity="0.6"/>
-          </svg>
-        </div>
-      </div>
-      {/* Screen content */}
-      <div className="rounded-2xl overflow-hidden" style={{ background: "#fff" }}>
-        {children}
-      </div>
-      {/* Home indicator */}
-      <div className="flex justify-center pt-2.5">
-        <div className="rounded-full" style={{ width: "36px", height: "4px", backgroundColor: "rgba(255,255,255,0.35)" }} />
-      </div>
-    </div>
-  );
 }
