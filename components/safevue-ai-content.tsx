@@ -196,6 +196,112 @@ export function SafeVUEContent() {
 
         <Divider />
 
+        {/* Product Ecosystem ───────────────────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-8">
+            <SectionLabel>Platform</SectionLabel>
+            <h2 className="font-heading font-bold mb-4"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              One platform. Three pillars.
+            </h2>
+            <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
+              SOL-X by MagellanX brings together three interconnected layers of maritime safety into a
+              unified platform — spanning the wrist, the deck, and the shore.
+            </p>
+          </motion.div>
+
+          <motion.div {...animate(0.1)} className="grid sm:grid-cols-3 gap-4 mb-10">
+            {[
+              { label: "Crew Protect", sub: "IIoT", desc: "Wearable biometric monitoring for crew health and wellbeing at sea." },
+              { label: "Control Of Work", sub: "Process", desc: "Digital Permit To Work workflows replacing paper-based SMS compliance." },
+              { label: "AI Analytics", sub: "Intelligence", desc: "Leading indicators that surface risk patterns before incidents occur." },
+            ].map((p) => (
+              <div key={p.label} className="p-6 rounded-2xl"
+                style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: "#0369A1" }}>{p.sub}</p>
+                <p className="text-sm font-bold mb-2" style={{ color: "var(--fg)" }}>{p.label}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "var(--muted)" }}>{p.desc}</p>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            {...animate(0.15)}
+            className="rounded-2xl overflow-hidden shadow-xl"
+            style={{ border: "1px solid var(--card-border)", backgroundColor: "#f8f9fa" }}
+          >
+            <Image
+              src="/case-studies/safevue-ai/product-ecosystem.png"
+              alt="SOL-X by MagellanX — Crew Protect, Control Of Work, AI Analytics platform diagram"
+              width={2048}
+              height={850}
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </section>
+
+        <Divider />
+
+        {/* IIoT Hardware ───────────────────────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-8">
+            <SectionLabel>Hardware</SectionLabel>
+            <h2 className="font-heading font-bold mb-4"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              Designed for ATEX Zone 1 hazardous environments
+            </h2>
+            <p className="text-base leading-relaxed max-w-2xl mb-6" style={{ color: "var(--muted)" }}>
+              Every device in the SafeVUE ecosystem is ATEX Zone 1 certified — the most demanding
+              hazardous area classification in maritime and industrial environments. The UX had to work
+              across all four surfaces, in harsh conditions, with gloves on.
+            </p>
+          </motion.div>
+
+          <motion.div {...animate(0.1)} className="grid sm:grid-cols-2 gap-3 mb-10">
+            {[
+              { label: "SOL-X SmartWatch", desc: "ATEX Zone 1 wearable for crew biometric monitoring and distress alerts." },
+              { label: "Control Of Work Tablet", desc: "Ruggedised ATEX tablet for permit issuance and sign-off on deck." },
+              { label: "Operations Dashboard", desc: "Large-format bridge display for fleet-wide situational awareness." },
+              { label: "Server / Networking Hardware", desc: "Onboard edge computing with Lloyd's Register certification." },
+            ].map((h) => (
+              <div key={h.label} className="flex items-start gap-3 p-4 rounded-xl"
+                style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2" style={{ backgroundColor: "#0369A1" }} />
+                <div>
+                  <p className="text-sm font-semibold mb-0.5" style={{ color: "var(--fg)" }}>{h.label}</p>
+                  <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{h.desc}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            {...animate(0.15)}
+            className="rounded-2xl overflow-hidden shadow-2xl"
+            style={{ border: "1px solid var(--card-border)" }}
+          >
+            <Image
+              src="/case-studies/safevue-ai/hardware-ecosystem.png"
+              alt="IIoT hardware for ATEX Zone 1 hazardous environments — SOL-X SmartWatch, Control Of Work Tablet, Operations Dashboard, Server hardware"
+              width={2854}
+              height={1416}
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </section>
+
+        <Divider />
+
         {/* The Challenge ───────────────────────────────────────────────── */}
         <section className="py-16">
           <motion.div {...animate()} className="mb-10">
@@ -280,6 +386,162 @@ export function SafeVUEContent() {
               With 1.7 million seafarers affected globally, improving safety through better tooling is not
               just a UX problem — it&apos;s a humanitarian one.
             </p>
+          </motion.div>
+        </section>
+
+        <Divider />
+
+        {/* Research: Empathise / Discover ─────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-8">
+            <SectionLabel>Research</SectionLabel>
+            <h2 className="font-heading font-bold mb-4"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              Empathise / Discover
+            </h2>
+            <p className="text-base leading-relaxed max-w-2xl" style={{ color: "var(--muted)" }}>
+              We went onboard. Understanding real usage required getting off the computer and onto vessels
+              and industrial sites — observing crew under actual working conditions, not simulated ones.
+            </p>
+          </motion.div>
+
+          <motion.div {...animate(0.1)} className="grid sm:grid-cols-2 gap-6 mb-10">
+            {/* Crew Perspectives */}
+            <div className="p-6 rounded-2xl" style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
+              <p className="text-sm font-bold mb-4" style={{ color: "var(--fg)" }}>Crew Perspectives</p>
+              <ul className="space-y-3">
+                {[
+                  { bold: "Interviewed crew", rest: " who had been using the wearable solution on active vessels." },
+                  { bold: "Quantitative analysis", rest: " of watch log data to identify usage and drop-off patterns." },
+                  { bold: "Observed", rest: " users at an industrial site that had recently adopted the solution." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-1.5" style={{ backgroundColor: "#0369A1" }} />
+                    <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>
+                      <strong style={{ color: "var(--fg)" }}>{item.bold}</strong>{item.rest}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Expert Insights */}
+            <div className="p-6 rounded-2xl" style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
+              <p className="text-sm font-bold mb-4" style={{ color: "var(--fg)" }}>Expert Insights</p>
+              <ul className="space-y-3">
+                {[
+                  { bold: "Interviewed subject matter experts", rest: " from maritime and Oil, Gas & Chemical (OAG) sectors who had transitioned to shore-based safety roles." },
+                  { bold: "Senior safety officers", rest: " responsible for safety policy across multiple fleets and sites." },
+                  { bold: "Mapped the gap", rest: " between what regulations require and what tools actually support." },
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-1.5" style={{ backgroundColor: "#0369A1" }} />
+                    <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>
+                      <strong style={{ color: "var(--fg)" }}>{item.bold}</strong>{item.rest}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.div>
+
+        </section>
+
+        <Divider />
+
+        {/* IA & User Flows ─────────────────────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-8">
+            <SectionLabel>Design Process</SectionLabel>
+            <h2 className="font-heading font-bold mb-4"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              Information architecture &amp; user flows
+            </h2>
+            <p className="text-base leading-relaxed max-w-2xl mb-6" style={{ color: "var(--muted)" }}>
+              Before designing a single screen, we mapped the full information architecture. The dashboard
+              serves three distinct user roles — crew, deck officers, and shore-based safety managers —
+              each with different permissions and priorities.
+            </p>
+          </motion.div>
+
+          <motion.div {...animate(0.1)} className="grid sm:grid-cols-2 gap-3 mb-10">
+            {[
+              { label: "Three Live Map variants", desc: "List View, Aft Deck Only, and Full Ship Map — letting users choose the right spatial model for their context." },
+              { label: "Activity Tracker split", desc: "Active Permits To Work separated from the closed archive, reducing cognitive load in high-pressure situations." },
+              { label: "Crew Profile drill-down", desc: "Captains get a single view of certifications, history, and incident log per crew member." },
+              { label: "Non-blocking notifications", desc: "Alert flows are dismissable and designed not to interrupt active work unnecessarily." },
+            ].map((d) => (
+              <div key={d.label} className="flex items-start gap-3 p-4 rounded-xl"
+                style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}>
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2" style={{ backgroundColor: "#0369A1" }} />
+                <div>
+                  <p className="text-sm font-semibold mb-0.5" style={{ color: "var(--fg)" }}>{d.label}</p>
+                  <p className="text-sm leading-snug" style={{ color: "var(--muted)" }}>{d.desc}</p>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* IA diagram — wide image, scrollable on mobile */}
+          <motion.div
+            {...animate(0.15)}
+            className="rounded-2xl overflow-hidden shadow-xl"
+            style={{ border: "1px solid var(--card-border)", backgroundColor: "#ffffff" }}
+          >
+            <div className="overflow-x-auto">
+              <Image
+                src="/case-studies/safevue-ai/ia-flow.png"
+                alt="Dashboard information architecture — Log In, Live Map, Activity Tracker, Crew Profile flows"
+                width={4355}
+                height={2322}
+                className="w-full h-auto min-w-[640px]"
+              />
+            </div>
+          </motion.div>
+        </section>
+
+        <Divider />
+
+        {/* Product Demo ───────────────────────────────────────────── */}
+        <section className="py-16">
+          <motion.div {...animate()} className="mb-8">
+            <SectionLabel>Product Demo</SectionLabel>
+            <h2 className="font-heading font-bold mb-4"
+              style={{
+                fontFamily: "var(--font-heading, sans-serif)",
+                fontSize: "clamp(1.75rem, 4vw, 2.5rem)",
+                color: "var(--fg)",
+                letterSpacing: "-0.02em",
+              }}>
+              See SafeVUE.ai in action
+            </h2>
+          </motion.div>
+
+          <motion.div
+            {...animate(0.1)}
+            className="rounded-2xl overflow-hidden shadow-2xl"
+            style={{ border: "1px solid var(--card-border)" }}
+          >
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/mQza03ElPFo"
+                title="SafeVUE.ai product demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: "none" }}
+              />
+            </div>
           </motion.div>
         </section>
 

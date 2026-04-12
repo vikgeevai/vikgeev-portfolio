@@ -188,6 +188,37 @@ export const caseStudies: CaseStudy[] = [
       { metric: "↑ 41%", label: "NPS improvement post-redesign" },
       { metric: "5 markets", label: "Singapore, HK, Thailand, PH, Vietnam" },
     ],
+    nextSlug: "indian-life-memorial",
+  },
+  {
+    slug: "indian-life-memorial",
+    title: "Indian Life Memorial",
+    subtitle: "Designing for grief and building with AI — Singapore's first agentic funeral planner",
+    industry: "End-of-Life · AI-Native · Singapore",
+    role: "Lead Product Designer & Builder",
+    timeline: "2024",
+    platform: "Claude Code · React · GitHub · Vercel",
+    outcome: "10+ pages shipped, 5-step AI funeral planner, live at indianlifememorial.com — built end-to-end with Claude",
+    coverImage: "/case-studies/indian-life-memorial/cover-logo.png",
+    heroColor: "#1A0D0A",
+    heroColorEnd: "#92400E",
+    tags: ["End-of-Life", "Claude Code", "AI-Native", "Compassion UX", "Singapore"],
+    overview:
+      "Indian Life Memorial is Singapore's first agentic funeral planner — a compassionate digital product serving the Indian, Hindu, and multi-faith community. It was designed and built end-to-end with Claude: from IA and content strategy through to the React codebase, GitHub, and Vercel deployment.",
+    challenge:
+      "Three design challenges, no easy answers: designing for users in acute emotional distress, navigating multi-faith complexity across 8 service types, and bringing pricing transparency to an industry historically resistant to it. All while building AI-natively — directing Claude at every layer of the product.",
+    process: [
+      { heading: "Plan — IA & Strategy", body: "Defined the product brief, user needs, and cultural constraints. Claude generated the full 10-page IA, user journey maps across 3 user states (crisis, informed, pre-planning), and per-page content strategy.", imageAlt: "IA and strategy" },
+      { heading: "Design — UX Copy & Compassion UX", body: "Defined tone of voice (compassionate, direct, never clinical) and emotional hierarchy. Claude wrote all homepage copy, service descriptions, configurator microcopy, FAQ content, and error states — ~4,000 words of production UX copy.", imageAlt: "UX writing and design" },
+      { heading: "Build — React Implementation", body: "Made all architectural decisions and reviewed outputs critically. Claude generated the full React + TypeScript codebase: the 5-step configurator state machine, real-time pricing logic, and Tailwind styling across 18 components.", imageAlt: "React build" },
+      { heading: "Ship & Evaluate", body: "Configured Vercel, pointed indianlifememorial.com, ran final QA. Post-launch heuristic evaluation used Claude to synthesise findings into a scored action backlog for the next iteration.", imageAlt: "Ship and evaluate" },
+    ],
+    results: [
+      { metric: "10+", label: "Pages designed and deployed" },
+      { metric: "5", label: "Configurator steps with real-time pricing" },
+      { metric: "Weeks", label: "From brief to production launch" },
+      { metric: "Claude", label: "Built AI-natively, end-to-end" },
+    ],
     nextSlug: "uob-money-lock",
   },
 ];

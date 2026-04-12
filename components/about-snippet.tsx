@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
@@ -27,30 +28,14 @@ export function AboutSnippet() {
               className="relative rounded-2xl overflow-hidden"
               style={{ aspectRatio: "4/5", maxHeight: "480px" }}
             >
-              {/* Avatar placeholder with initials */}
-              <div
-                className="w-full h-full flex items-center justify-center"
-                style={{
-                  background: "linear-gradient(135deg, var(--card) 0%, var(--border) 100%)",
-                  border: "1px solid var(--card-border)",
-                }}
-              >
-                <div className="text-center">
-                  <div
-                    className="w-28 h-28 rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-bold text-4xl"
-                    style={{
-                      fontFamily: "var(--font-heading, sans-serif)",
-                      background: "linear-gradient(135deg, var(--accent), #7C3AED)",
-                      color: "#fff",
-                    }}
-                  >
-                    VG
-                  </div>
-                  <p className="text-sm" style={{ color: "var(--muted)" }}>
-                    Profile photo coming soon
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="/vik-profile.png"
+                alt="Vik Geev — Lead Product Designer"
+                width={1118}
+                height={1346}
+                className="w-full h-full object-cover object-top"
+                priority
+              />
             </div>
 
             {/* Floating badge */}
