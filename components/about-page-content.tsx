@@ -472,47 +472,6 @@ export function AboutPageContent() {
           </div>
         </motion.div>
 
-        {/* ── CTA ─────────────────────────────────────────────────── */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="p-10 rounded-2xl text-center"
-          style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}
-        >
-          <h2
-            className="font-heading font-bold mb-3"
-            style={{ fontFamily: "var(--font-heading, sans-serif)", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--fg)", letterSpacing: "-0.02em" }}
-          >
-            Let&apos;s build something great
-          </h2>
-          <p className="text-base mb-8 max-w-md mx-auto" style={{ color: "var(--muted)" }}>
-            Open to Head of Design, Principal Designer, and Experience Design Lead roles in Singapore and across Southeast Asia.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/6596875688" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium cursor-pointer"
-              style={{ backgroundColor: "#25D366", color: "#fff" }}>
-              <MessageCircle size={17} /> WhatsApp
-            </a>
-            <a href="mailto:viknesh.geevan@gmail.com"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium border cursor-pointer"
-              style={{ borderColor: "var(--border)", color: "var(--fg)" }}>
-              <Mail size={17} /> viknesh.geevan@gmail.com
-            </a>
-            <a href="https://linkedin.com/in/vikneshgeev" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium border cursor-pointer"
-              style={{ borderColor: "var(--border)", color: "var(--fg)" }}>
-              <ExternalLink size={17} /> LinkedIn
-            </a>
-            <a href="/Viknesh_Geevanantham_Resume.pdf" download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium border cursor-pointer"
-              style={{ borderColor: "var(--border)", color: "var(--fg)" }}>
-              <Download size={17} /> Resume PDF
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
