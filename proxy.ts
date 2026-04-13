@@ -13,9 +13,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/work/uob-money-lock(.*)',
-    '/work/safevue-ai(.*)',
     '/work/fwd-insurance(.*)',
-    '/work/indian-life-memorial(.*)',
   ],
 }
