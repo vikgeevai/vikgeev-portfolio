@@ -472,7 +472,7 @@ export function AboutPageContent() {
           </div>
         </motion.div>
 
-        {/* ── Contact CTA ─────────────────────────────────────────────────── */}
+        {/* ── CTA ─────────────────────────────────────────────────── */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -485,7 +485,7 @@ export function AboutPageContent() {
             className="font-heading font-bold mb-3"
             style={{ fontFamily: "var(--font-heading, sans-serif)", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "var(--fg)", letterSpacing: "-0.02em" }}
           >
-            Let&apos;s connect
+            Let&apos;s build something great
           </h2>
           <p className="text-base mb-8 max-w-md mx-auto" style={{ color: "var(--muted)" }}>
             Open to Head of Design, Principal Designer, and Experience Design Lead roles in Singapore and across Southeast Asia.
