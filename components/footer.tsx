@@ -8,41 +8,7 @@ export function Footer() {
     <footer className="mt-auto" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="mx-auto max-w-6xl px-6">
 
-        {/* ── Top: text section ── */}
-        <div className="grid md:grid-cols-2 gap-12 py-16">
-          {/* Left */}
-          <div>
-            <h2
-              className="font-heading font-bold mb-3"
-              style={{
-                fontFamily: "var(--font-heading, sans-serif)",
-                fontSize: "clamp(1.5rem, 3vw, 2rem)",
-                color: "var(--fg)",
-                letterSpacing: "-0.02em",
-              }}
-            >
-              Let&apos;s build something great.
-            </h2>
-            <p className="text-base leading-relaxed max-w-sm" style={{ color: "var(--muted)" }}>
-              Available for senior Product Design roles in Singapore and
-              Southeast Asia. Open to remote and hybrid opportunities.
-            </p>
-          </div>
-
-          {/* Right — contact */}
-          <div className="flex flex-col gap-4 md:items-end justify-center">
-            <a
-              href="mailto:viknesh.geevan@gmail.com"
-              className="inline-flex items-center gap-2 text-sm transition-colors duration-200"
-              style={{ color: "var(--muted)" }}
-            >
-              <Mail size={15} />
-              viknesh.geevan@gmail.com
-            </a>
-          </div>
-        </div>
-
-        {/* ── Middle: 4-button CTA card ── */}
+        {/* ── CTA card ── */}
         <div
           className="p-10 rounded-2xl text-center mb-16"
           style={{ backgroundColor: "var(--card)", border: "1px solid var(--card-border)" }}
