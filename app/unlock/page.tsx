@@ -41,7 +41,7 @@ function UnlockForm() {
 
   return (
     <div
-      className="min-h-screen flex items-center justify-center px-6"
+      className="flex flex-col items-center px-6 pt-24 pb-16"
       style={{ backgroundColor: "var(--bg)" }}
     >
       <div
@@ -87,7 +87,7 @@ function UnlockForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              autoFocus
+              autoComplete="current-password"
               className="w-full px-4 py-3 rounded-xl text-sm pr-11 outline-none transition-all"
               style={{
                 backgroundColor: "var(--bg)",
