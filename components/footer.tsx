@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, ExternalLink, MessageCircle, Download } from "lucide-react";
+import { Mail, ExternalLink, Download } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -28,11 +28,6 @@ export function Footer() {
             Open to Head of Design, Principal Designer, and Experience Design Lead roles in Singapore and across Southeast Asia.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/6596875688" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium"
-              style={{ backgroundColor: "#25D366", color: "#fff" }}>
-              <MessageCircle size={17} /> WhatsApp
-            </a>
             <a href="mailto:viknesh.geevan@gmail.com"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-full font-medium border"
               style={{ borderColor: "var(--border)", color: "var(--fg)" }}>
