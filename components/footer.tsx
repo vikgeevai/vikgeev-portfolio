@@ -5,8 +5,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto" style={{ borderTop: "1px solid var(--border)" }}>
-      <div className="mx-auto max-w-6xl px-6">
+    <footer className="mt-auto">
+      <div className="mx-auto max-w-6xl px-6 pt-16">
 
         {/* ── CTA card ── */}
         <div
