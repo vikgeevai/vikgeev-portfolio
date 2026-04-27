@@ -188,6 +188,55 @@ export const caseStudies: CaseStudy[] = [
       { metric: "↑ 41%", label: "NPS improvement post-redesign" },
       { metric: "5 markets", label: "Singapore, HK, Thailand, PH, Vietnam" },
     ],
+    nextSlug: "fwd-term-life",
+  },
+  {
+    slug: "fwd-term-life",
+    title: "FWD Term Life Re-Design",
+    subtitle: "Simplifying life insurance to drive sales and reduce drop-off",
+    industry: "Insurtech · Insurance",
+    role: "UX Manager (In-house)",
+    timeline: "2017 – 2018",
+    platform: "Web",
+    outcome: "14 pages → 6 · 14 mins → 9 · 100% task success · SEQ 7/7",
+    heroColor: "#7C2D12",
+    heroColorEnd: "#F97316",
+    tags: ["Insurtech", "Term Life", "Redesign", "Web", "Qualitative Research"],
+    overview:
+      "As in-house UX Manager at FWD Insurance Singapore, I led the redesign of the Term Life insurance purchase flow after post-launch data revealed a significant drop in sales and incomplete applications. The original flow was 14 pages, took 14 minutes, and required 58 clicks — far too complex for a self-serve digital product. The goal: simplify the journey, guide users through every step, and make buying term life insurance feel as straightforward as it should be.",
+    challenge:
+      "Three core tensions defined the brief: users were frustrated by a fragmented, time-consuming flow that forced them to refresh pages mid-form; they didn't trust their own knowledge enough to make coverage decisions without agent support; and there was a fundamental gap between what users learned online versus what an agent would explain in person. The redesign had to bridge that trust gap — digitally.",
+    process: [
+      {
+        heading: "Discovery & Qualitative Research",
+        body: "Conducted user interviews with 9 FWD customers and usability testing with 6 individual users. Ran competitor analysis and synthesised findings through affinity mapping. Key finding: users were dropping off not because of intent, but because the flow was exhausting — 'Every few questions I had to refresh the page, it was just too time consuming.'",
+        images: ["/case-studies/fwd-term-life/user-quotes.png"],
+        imageAlt: "Customer research quotes and user needs",
+      },
+      {
+        heading: "Define — Personas & Pain Points",
+        body: "Identified two primary personas from research synthesis: the independent digital buyer who wants to self-serve with confidence, and the cautious first-timer who needs guidance and reassurance at decision points. Ran stakeholder feature prioritisation with the product and business teams to align on scope. Core user needs: get advice and clarification on demand, information that's straightforward and simple, and confidence that they're making the right choice.",
+        imageAlt: "Personas and pain point mapping",
+      },
+      {
+        heading: "Co-creation & Ideation",
+        body: "Facilitated co-creation workshops with both FWD stakeholders and customers to validate solution directions. Explored ideas for shortening the flow, introducing a coverage calculator, adding a persistent progress bar, and simplifying the underwriting questions to binary yes/no options. Sketched multiple flow variants before converging on the optimal structure.",
+        images: ["/case-studies/fwd-term-life/design-process.png"],
+        imageAlt: "Sketching, mid-fidelity wireframes, and high-fidelity prototype",
+      },
+      {
+        heading: "Prototyping & Usability Testing",
+        body: "Progressed from hand-drawn sketches through mid-fidelity wireframes to a high-fidelity interactive prototype in Axure RP. Round 1 usability testing with 6 participants achieved 100% task success and an average SEQ rating of 7/7 — the maximum score. Every participant completed the flow faster than on the original design.",
+        images: ["/case-studies/fwd-term-life/testing-results.png"],
+        imageAlt: "Testing Round 1 results and post-testing quotes",
+      },
+    ],
+    results: [
+      { metric: "↓ 57%", label: "Pages reduced — from 14 to 6" },
+      { metric: "↓ 36%", label: "Completion time — from 14 to 9 minutes" },
+      { metric: "100%", label: "Task success rate in usability testing" },
+      { metric: "7/7", label: "Average SEQ (Single Ease Question) rating" },
+    ],
     nextSlug: "indian-life-memorial",
   },
   {
