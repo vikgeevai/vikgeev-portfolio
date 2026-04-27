@@ -18,6 +18,10 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Case study pages have a coloured hero — use white nav text until scrolled
+  const isHeroPage = pathname.startsWith("/work/") && pathname !== "/work";
+  const useLight = isHeroPage && !scrolled;
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -47,7 +51,11 @@ export function Navbar() {
           <Link
             href="/"
             className="font-heading text-lg font-bold tracking-tight"
-            style={{ fontFamily: "var(--font-heading, sans-serif)", color: "var(--fg)" }}
+            style={{
+              fontFamily: "var(--font-heading, sans-serif)",
+              color: useLight ? "#fff" : "var(--fg)",
+              transition: "color 0.3s ease",
+            }}
           >
             Vik Geev
           </Link>
@@ -58,9 +66,12 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium transition-colors duration-200"
+                className="text-sm font-medium"
                 style={{
-                  color: pathname === link.href ? "var(--fg)" : "var(--muted)",
+                  color: useLight
+                    ? pathname === link.href ? "#fff" : "rgba(255,255,255,0.75)"
+                    : pathname === link.href ? "var(--fg)" : "var(--muted)",
+                  transition: "color 0.3s ease",
                 }}
               >
                 {link.label}
@@ -89,7 +100,7 @@ export function Navbar() {
               aria-label="Toggle menu"
               onClick={() => setMobileOpen((v) => !v)}
               className="w-9 h-9 flex items-center justify-center rounded-full cursor-pointer"
-              style={{ color: "var(--fg)" }}
+              style={{ color: useLight ? "#fff" : "var(--fg)", transition: "color 0.3s ease" }}
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
