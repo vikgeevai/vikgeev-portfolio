@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Eye, EyeOff, Lock } from "lucide-react";
 
 function UnlockForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const next = searchParams.get("next") || "/";
 
@@ -27,7 +26,7 @@ function UnlockForm() {
       });
 
       if (res.ok) {
-        router.push(next);
+        window.location.assign(next);
       } else {
         setError("Incorrect password. Please try again.");
         setPassword("");
