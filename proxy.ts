@@ -13,6 +13,6 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/work/fwd-insurance(.*)',
+    '/((?!unlock|api/unlock|_next/static|_next/image|favicon.ico).*)',
   ],
 }

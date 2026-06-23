@@ -7,7 +7,7 @@ import { Eye, EyeOff, Lock } from "lucide-react";
 function UnlockForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const next = searchParams.get("next") || "/work";
+  const next = searchParams.get("next") || "/";
 
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -61,7 +61,7 @@ function UnlockForm() {
           className="text-xs font-semibold tracking-widest uppercase mb-2"
           style={{ color: "var(--accent)" }}
         >
-          NDA Protected
+          Private
         </p>
         <h1
           className="font-bold mb-2"
@@ -73,10 +73,10 @@ function UnlockForm() {
             lineHeight: 1.2,
           }}
         >
-          Enter password to view case studies
+          Enter password to continue
         </h1>
         <p className="text-sm mb-6" style={{ color: "var(--muted)" }}>
-          These case studies are password protected due to NDA agreements.
+          This site is password protected.
         </p>
 
         {/* Form */}
@@ -119,7 +119,7 @@ function UnlockForm() {
             className="w-full py-3 rounded-xl text-sm font-semibold transition-opacity disabled:opacity-50"
             style={{ backgroundColor: "var(--accent)", color: "#fff" }}
           >
-            {loading ? "Verifying…" : "View case studies"}
+            {loading ? "Verifying…" : "Unlock site"}
           </button>
         </form>
       </div>
